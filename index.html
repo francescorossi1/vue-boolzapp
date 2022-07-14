@@ -4,12 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Vue Boolzapp</title>
 </head>
 <body>
+    <div id="root" class="container">
+        <div class="box d-flex">
+            <div id="contacts-section" class="h-100">
+                <header>
+                    <nav class="navbar px-2">
+                        <div class="nav-user">
+                            <img src="img/avatar_1.jpg" alt="" class="img-fluid h-100">
+                            <span>Nome Utente</span>
+                        </div>
+                        <div class="nav-settings">
+                            <i class="fa-solid fa-circle-notch px-1"></i>
+                            <i class="fa-solid fa-message px-1"></i>
+                            <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                        </div>
+                    </nav>
+                </header>
+                <div class="notification d-flex">
+                    <button class="circle-button">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </button>
+                    <div class="px-2">
+                        <span>Ricevi notifiche di nuovi messaggi</span>
+                        <p><u>Attiva notifiche desktop</u></p>
+                    </div>
+                </div>
+                <div class="chat-section">
+                    <div class="p-1 bg-light">
+                        <input class="form-control btn bg-white text-start" type="search" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <ul class="chat-contacts bg-white">
+                        <li class="p-2">
+                            <div class="nav-user">
+                                <img src="img/avatar_2.jpg" alt="" class="img-fluid h-100">
+                                <span>Michele</span>
+                            </div>
+                        </li>
+                        <li class="p-2">
+                            <div class="nav-user">
+                                <img src="img/avatar_3.jpg" alt="" class="img-fluid h-100">
+                                <span>Fabio</span>
+                            </div>
+                        </li>
+                        <li class="p-2">
+                            <div class="nav-user">
+                                <img src="img/avatar_4.jpg" alt="" class="img-fluid h-100">
+                                <span>Samuele</span>
+                            </div>
+                        </li>
+                        <li class="p-2">
+                            <div class="nav-user">
+                                <img src="img/avatar_6.jpg" alt="" class="img-fluid h-100">
+                                <span>Lucia</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="chat-area" class="position-relative h-100">
+                <header>
+                    <nav class="navbar navbar-fixed-top-container px-2">
+                        <div class="nav-user d-flex">
+                            <img src="img/avatar_2.jpg" alt="" class="img-fluid h-100">
+                            <div class="px-2">
+                                <span>Michele</span>
+                                <p>Ultimo accesso alle ore</p>
+                            </div>
+                        </div>
+                        <div class="nav-settings">
+                            <i class="fa-solid fa-magnifying-glass px-1"></i>
+                            <i class="fa-solid fa-paperclip px-1"></i>
+                            <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                        </div>
+                    </nav>
+                </header>
+                <main class="overflow-auto" id="chat-screen">
+                </main>
+                <nav class="navbar px-2">
+                    <button class="btn border-0">
+                        <i class="fa-regular fa-face-smile fa-2x"></i>
+                    </button>
+                    <div class="p-1 bg-light w-75">
+                        <input class="form-control btn text-start" type="search" placeholder="Scrivi un messaggio">
+                    </div>
+                    <button class="btn border-0">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
