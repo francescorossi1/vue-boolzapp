@@ -17,8 +17,8 @@
                 <header>
                     <nav class="navbar px-2">
                         <div class="nav-user">
-                            <img src="img/avatar_1.jpg" alt="" class="img-fluid h-100">
-                            <span>Nome Utente</span>
+                            <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" class="img-fluid h-100">
+                            <span>{{user.name}}</span>
                         </div>
                         <div class="nav-settings">
                             <i class="fa-solid fa-circle-notch px-1"></i>
@@ -41,28 +41,10 @@
                         <input class="form-control btn bg-white text-start" type="search" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <ul class="chat-contacts bg-white">
-                        <li class="p-2">
+                        <li class="p-2" v-for="contact in contacts">
                             <div class="nav-user">
-                                <img src="img/avatar_2.jpg" alt="" class="img-fluid h-100">
-                                <span>Michele</span>
-                            </div>
-                        </li>
-                        <li class="p-2">
-                            <div class="nav-user">
-                                <img src="img/avatar_3.jpg" alt="" class="img-fluid h-100">
-                                <span>Fabio</span>
-                            </div>
-                        </li>
-                        <li class="p-2">
-                            <div class="nav-user">
-                                <img src="img/avatar_4.jpg" alt="" class="img-fluid h-100">
-                                <span>Samuele</span>
-                            </div>
-                        </li>
-                        <li class="p-2">
-                            <div class="nav-user">
-                                <img src="img/avatar_6.jpg" alt="" class="img-fluid h-100">
-                                <span>Lucia</span>
+                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="img-fluid h-100">
+                                <span>{{contact.name}}</span>
                             </div>
                         </li>
                     </ul>
@@ -85,7 +67,15 @@
                         </div>
                     </nav>
                 </header>
-                <main class="overflow-auto" id="chat-screen">
+                <main class="overflow-auto container" id="chat-screen">
+                    <div>
+                        <ul>
+                            <li class="d-flex" :class="{'justify-content-end' : message.status === 'sent'}" v-for="(message, i) in contacts[0].messages">
+                                <span class="message sent-message" v-if="message.status === 'sent'">{{message.text}}</span>
+                                <span class="message received-message" v-else>{{message.text}}</span>
+                            </li>
+                        </ul>
+                    </div>
                 </main>
                 <nav class="navbar px-2">
                     <button class="btn border-0">

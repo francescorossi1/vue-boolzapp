@@ -5,6 +5,7 @@
     --gray: #D9DBD5;
     --nav-gray: #EAEAEA;
     --alert-cyan: #8EDAFC;
+    --chat-green: #D5F9BA;
 }
 /* Generics */
 
@@ -70,4 +71,19 @@ body {
 
 ul{
     list-style-type: none;
+    padding: 0;
+}
+
+.sent-message{
+    background-color: var(--chat-green);
+    
+}
+.received-message{
+    background-color: #fff;
+    
+}
+
+.message{
+    padding: 10px 20px;
+    margin: 10px 20px;
 }
