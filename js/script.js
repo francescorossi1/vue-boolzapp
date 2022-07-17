@@ -105,7 +105,8 @@ const root = new Vue({
         },
       ],
       contactIndex: 0,
-      newMessageText: ''
+      newMessageText: '',
+      hasReplied: false
     },
     methods: {
         selectContact(i){
@@ -122,6 +123,14 @@ const root = new Vue({
             })
           }
             this.newMessageText = ''
+            setTimeout(this.addReply,1000)
+        },
+        addReply(){
+            this.contacts[this.contactIndex].messages.push({
+                date: dayjs(d).format('DD/MM/YYYY HH:mm:ss') ,
+                text: 'ok',
+                status: 'received'
+            })
+          },
         }
-      },
 })
