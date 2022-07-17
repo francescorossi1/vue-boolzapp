@@ -13,7 +13,7 @@ Click sul contatto mostra la conversazione del contatto cliccato
 Milestone 3
 Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo. */
-
+const d = new Date();
 const root = new Vue({
     name: 'boolzapp',
     el: '#root',
@@ -104,13 +104,24 @@ const root = new Vue({
           ],
         },
       ],
-      contactIndex: 0
+      contactIndex: 0,
+      newMessageText: ''
     },
     methods: {
         selectContact(i){
           this.contacts.forEach((contact, index) => {
             if(index === i) return this.contactIndex = i
           });
+        },
+        addNewMessage(){
+          if(this.newMessageText){
+            this.contacts[this.contactIndex].messages.push({
+                date: dayjs(d).format('DD/MM/YYYY HH:mm:ss') ,
+                text: this.newMessageText,
+                status: 'sent'
+            })
+          }
+            this.newMessageText = ''
         }
       },
 })
