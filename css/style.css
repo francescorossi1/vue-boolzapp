@@ -69,6 +69,10 @@ ul{
     height: calc(100% - 46px);
 }
 
+.contacts-list li{
+    cursor: pointer;
+}
+
 #message-list, .contacts-index{
     height: calc(100% - 140px);
 }
