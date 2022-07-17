@@ -10,10 +10,15 @@
 /* Generics */
 
 body {
-        background-image: linear-gradient(var(--green) 15%, var(--gray) 15% 100%);
-        background-size: cover;
-        height: 100vh;
-        padding: 5vh 0;
+    background-image: linear-gradient(var(--green) 15%, var(--gray) 15% 100%);
+    background-size: cover;
+    height: 100vh;
+    padding: 5vh 0;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
 }
 
 .box{
@@ -21,29 +26,30 @@ body {
     background-image: url(../img/mine.jpg);
 }
 
-.navbar, .notification, .chat-contacts li{
+#contacts-section {
+    flex-basis: 40%;
+}
+
+#chat-section {
+    flex-basis: 60%;
+}
+
+.circle-button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0;
+    color: var(--alert-cyan);
+}
+
+/* Navbar */
+
+.navbar, .notifications, .contacts-list li{
     height: 70px;
 }
 
 .navbar{ 
     background-color: var(--nav-gray);
-}
-
-#contacts-section {
-    flex-basis: 40%;
-}
-
-#chat-area {
-    flex-basis: 60%;
-}
-
-.chat-contacts{
-    overflow-y: auto;
-    height: calc(100% - 46px);
-}
-
-#chat-screen, .chat-section{
-    height: calc(100% - 140px);
 }
 
 .nav-user{
@@ -56,23 +62,23 @@ body {
     border-radius: 50%;
 }
 
-.notification{
+/* Contacts section */
+
+.contacts-list{
+    overflow-y: auto;
+    height: calc(100% - 46px);
+}
+
+#message-list, .contacts-index{
+    height: calc(100% - 140px);
+}
+
+.notifications{
     background-color: var(--alert-cyan);
     padding: 10px;
 }
 
-.circle-button{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 0;
-    color: var(--alert-cyan);
-}
-
-ul{
-    list-style-type: none;
-    padding: 0;
-}
+/* Chat section */
 
 .sent-message{
     background-color: var(--chat-green);
