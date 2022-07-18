@@ -132,5 +132,11 @@ const root = new Vue({
     addReply() {
       this.addMessage('ok','received')
     },
+    isVisible() {
+      this.contacts.filter((contact => {contact.visible = contact.name.toLowerCase().includes(this.filter.toLowerCase())}
+      ))
+    }
   }
 })
+
+// contact.name.toLowerCase().includes(filter.toLowerCase())
