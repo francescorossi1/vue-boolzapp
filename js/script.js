@@ -117,23 +117,21 @@ const root = new Vue({
         if (index === i) return this.contactIndex = i
       });
     },
-    addNewMessage() {
-      if (this.newMessageText) {
-        this.contacts[this.contactIndex].messages.push({
-          date: dayjs(d).format('DD/MM/YYYY HH:mm:ss'),
-          text: this.newMessageText,
-          status: 'sent'
-        })
-      }
-      this.newMessageText = ''
-      setTimeout(this.addReply, 1000)
-    },
-    addReply() {
+    addMessage(text, status) {
       this.contacts[this.contactIndex].messages.push({
         date: dayjs(d).format('DD/MM/YYYY HH:mm:ss'),
-        text: 'ok',
-        status: 'received'
+        text: text,
+        status: status
       })
+    },
+    addNewMessage() {
+      if (!this.newMessageText) return
+      this.addMessage(this.newMessageText, 'sent')
+      setTimeout(this.addReply, 1000)
+      this.newMessageText = ''
+    },
+    addReply() {
+      this.addMessage('ok','received')
     },
   }
 })

@@ -95,13 +95,9 @@
                 <main class="overflow-auto container" id="message-list">
                     <div v-for="(contact, i) in contacts">
                         <ul v-if="i === contactIndex">
-                            <li class="d-flex" :class="{'justify-content-end' : message.status === 'sent'}"
+                            <li class="d-flex" :class="message.status"
                                 v-for="(message, i) in contact.messages">
-                                <div v-if="message.status === 'sent'" class="message sent-message">
-                                    <p class="mb-0">{{message.text}}</p>
-                                    <small class="text-muted text-end">{{message.date}}</small>
-                                </div>
-                                <div v-else class="message received-message">
+                                <div class="message" :class="message.status">
                                     <p class="mb-0">{{message.text}}</p>
                                     <small class="text-muted text-end">{{message.date}}</small>
                                 </div>

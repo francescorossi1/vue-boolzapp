@@ -84,13 +84,15 @@ ul{
 
 /* Chat section */
 
-.sent-message{
+.sent div{
     background-color: var(--chat-green);
-    
 }
-.received-message{
+
+.sent{   
+    justify-content: end;
+}
+.received div{
     background-color: #fff;
-    
 }
 
 .message{
