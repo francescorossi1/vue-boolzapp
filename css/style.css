@@ -69,8 +69,12 @@ ul{
     height: calc(100% - 46px);
 }
 
-.contacts-list li{
+.contacts-list div{
     cursor: pointer;
+}
+
+.contacts-list div:hover{
+    background-color: var(--gray);
 }
 
 #message-list, .contacts-index{

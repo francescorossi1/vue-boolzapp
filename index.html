@@ -53,13 +53,14 @@
 
                 <!-- Contacts -->
                 <div class="contacts-index">
-                    <div class="p-1 bg-light">
+                    <div class="p-1 bg-light d-flex align-items-center">
+                        <i class="fa-solid fa-magnifying-glass px-2 text-muted"></i>
                         <input class="form-control btn bg-white text-start" type="search"
                             placeholder="Cerca o inizia una nuova chat" v-model="filter">
                     </div>
                     <ul class="contacts-list bg-white">
                         <li v-for="(contact, i) in contacts" v-show="contact.name.toLowerCase().includes(filter)">
-                            <div class="nav-user" @click="selectContact(i)">
+                            <div class="nav-user p-2" @click="selectContact(i)">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name"
                                     class="img-fluid h-100">
                                 <span>{{contact.name}}</span>
