@@ -16,7 +16,6 @@ Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente r
 Milestone 4
 Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite 
 (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina) */
-const d = new Date();
 const root = new Vue({
   name: 'boolzapp',
   el: '#root',
@@ -119,7 +118,7 @@ const root = new Vue({
     },
     addMessage(text, status) {
       this.contacts[this.contactIndex].messages.push({
-        date: dayjs(d).format('DD/MM/YYYY HH:mm:ss'),
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         text: text,
         status: status
       })
