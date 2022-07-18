@@ -42,6 +42,10 @@ ul{
     color: var(--alert-cyan);
 }
 
+.text-s{
+    font-size: 12px;
+}
+
 /* Navbar */
 
 .navbar, .notifications, .contacts-list li{
@@ -88,13 +92,14 @@ ul{
 
 /* Chat section */
 
+.sent{   
+    justify-content: end;
+}
+
 .sent div{
     background-color: var(--chat-green);
 }
 
-.sent{   
-    justify-content: end;
-}
 .received div{
     background-color: #fff;
 }
@@ -102,5 +107,4 @@ ul{
 .message{
     padding: 10px 20px;
     margin: 10px 20px;
-    text-align: end;
 }
