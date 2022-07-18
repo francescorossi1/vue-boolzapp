@@ -58,7 +58,7 @@
                             placeholder="Cerca o inizia una nuova chat" v-model="filter">
                     </div>
                     <ul class="contacts-list bg-white">
-                        <li v-for="(contact, i) in contacts" v-show="contact.name.toLowerCase().startsWith(filter)">
+                        <li v-for="(contact, i) in contacts" v-show="contact.name.toLowerCase().includes(filter)">
                             <div class="nav-user" @click="selectContact(i)">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name"
                                     class="img-fluid h-100">
